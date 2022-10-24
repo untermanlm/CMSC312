@@ -20,5 +20,5 @@ def createProcess(instructions):
         maxCycle = int(arr[2])
         randNum = random.randint(minCycle, maxCycle)
 
-        processList.append(operation + " " + str(randNum))
+        processList.append((operation, randNum))
     return processList

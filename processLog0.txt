@@ -1,0 +1,310 @@
+RUN
+Calculating: 58 / 59 cycles remaining.
+
+Calculating: 57 / 59 cycles remaining.
+
+Calculating: 56 / 59 cycles remaining.
+
+Calculating: 55 / 59 cycles remaining.
+
+Calculating: 54 / 59 cycles remaining.
+
+Calculating: 53 / 59 cycles remaining.
+
+Calculating: 52 / 59 cycles remaining.
+
+Calculating: 51 / 59 cycles remaining.
+
+Calculating: 50 / 59 cycles remaining.
+
+Calculating: 49 / 59 cycles remaining.
+
+Calculating: 48 / 59 cycles remaining.
+
+Calculating: 47 / 59 cycles remaining.
+
+Calculating: 46 / 59 cycles remaining.
+
+Calculating: 45 / 59 cycles remaining.
+
+Calculating: 44 / 59 cycles remaining.
+
+Calculating: 43 / 59 cycles remaining.
+
+Calculating: 42 / 59 cycles remaining.
+
+Calculating: 41 / 59 cycles remaining.
+
+Calculating: 40 / 59 cycles remaining.
+
+Calculating: 39 / 59 cycles remaining.
+
+Calculating: 38 / 59 cycles remaining.
+
+Calculating: 37 / 59 cycles remaining.
+
+Calculating: 36 / 59 cycles remaining.
+
+Calculating: 35 / 59 cycles remaining.
+
+Calculating: 34 / 59 cycles remaining.
+
+Calculating: 33 / 59 cycles remaining.
+
+Calculating: 32 / 59 cycles remaining.
+
+Calculating: 31 / 59 cycles remaining.
+
+Calculating: 30 / 59 cycles remaining.
+
+Calculating: 29 / 59 cycles remaining.
+
+Calculating: 28 / 59 cycles remaining.
+
+Calculating: 27 / 59 cycles remaining.
+
+Calculating: 26 / 59 cycles remaining.
+
+Calculating: 25 / 59 cycles remaining.
+
+Calculating: 24 / 59 cycles remaining.
+
+Calculating: 23 / 59 cycles remaining.
+
+Calculating: 22 / 59 cycles remaining.
+
+Calculating: 21 / 59 cycles remaining.
+
+Calculating: 20 / 59 cycles remaining.
+
+Calculating: 19 / 59 cycles remaining.
+
+Calculating: 18 / 59 cycles remaining.
+
+Calculating: 17 / 59 cycles remaining.
+
+Calculating: 16 / 59 cycles remaining.
+
+Calculating: 15 / 59 cycles remaining.
+
+Calculating: 14 / 59 cycles remaining.
+
+Calculating: 13 / 59 cycles remaining.
+
+Calculating: 12 / 59 cycles remaining.
+
+Calculating: 11 / 59 cycles remaining.
+
+Calculating: 10 / 59 cycles remaining.
+
+Calculating: 9 / 59 cycles remaining.
+
+Calculating: 8 / 59 cycles remaining.
+
+Calculating: 7 / 59 cycles remaining.
+
+Calculating: 6 / 59 cycles remaining.
+
+Calculating: 5 / 59 cycles remaining.
+
+Calculating: 4 / 59 cycles remaining.
+
+Calculating: 3 / 59 cycles remaining.
+
+Calculating: 2 / 59 cycles remaining.
+
+Calculating: 1 / 59 cycles remaining.
+
+Calculating: 0 / 59 cycles remaining.
+
+
+RUN
+Calculating: 42 / 43 cycles remaining.
+
+Calculating: 41 / 43 cycles remaining.
+
+Calculating: 40 / 43 cycles remaining.
+
+Calculating: 39 / 43 cycles remaining.
+
+Calculating: 38 / 43 cycles remaining.
+
+Calculating: 37 / 43 cycles remaining.
+
+Calculating: 36 / 43 cycles remaining.
+
+Calculating: 35 / 43 cycles remaining.
+
+Calculating: 34 / 43 cycles remaining.
+
+Calculating: 33 / 43 cycles remaining.
+
+Calculating: 32 / 43 cycles remaining.
+
+Calculating: 31 / 43 cycles remaining.
+
+Calculating: 30 / 43 cycles remaining.
+
+Calculating: 29 / 43 cycles remaining.
+
+Calculating: 28 / 43 cycles remaining.
+
+Calculating: 27 / 43 cycles remaining.
+
+Calculating: 26 / 43 cycles remaining.
+
+Calculating: 25 / 43 cycles remaining.
+
+Calculating: 24 / 43 cycles remaining.
+
+Calculating: 23 / 43 cycles remaining.
+
+Calculating: 22 / 43 cycles remaining.
+
+Calculating: 21 / 43 cycles remaining.
+
+Calculating: 20 / 43 cycles remaining.
+
+Calculating: 19 / 43 cycles remaining.
+
+Calculating: 18 / 43 cycles remaining.
+
+Calculating: 17 / 43 cycles remaining.
+
+Calculating: 16 / 43 cycles remaining.
+
+Calculating: 15 / 43 cycles remaining.
+
+Calculating: 14 / 43 cycles remaining.
+
+Calculating: 13 / 43 cycles remaining.
+
+Calculating: 12 / 43 cycles remaining.
+
+Calculating: 11 / 43 cycles remaining.
+
+Calculating: 10 / 43 cycles remaining.
+
+Calculating: 9 / 43 cycles remaining.
+
+Calculating: 8 / 43 cycles remaining.
+
+Calculating: 7 / 43 cycles remaining.
+
+Calculating: 6 / 43 cycles remaining.
+
+Calculating: 5 / 43 cycles remaining.
+
+Calculating: 4 / 43 cycles remaining.
+
+Calculating: 3 / 43 cycles remaining.
+
+Calculating: 2 / 43 cycles remaining.
+
+Calculating: 1 / 43 cycles remaining.
+
+Calculating: 0 / 43 cycles remaining.
+
+
+WAIT
+Waiting: 17 / 18 cycles remaining.
+
+Waiting: 16 / 18 cycles remaining.
+
+Waiting: 15 / 18 cycles remaining.
+
+Waiting: 14 / 18 cycles remaining.
+
+Waiting: 13 / 18 cycles remaining.
+
+Waiting: 12 / 18 cycles remaining.
+
+Waiting: 11 / 18 cycles remaining.
+
+Waiting: 10 / 18 cycles remaining.
+
+Waiting: 9 / 18 cycles remaining.
+
+Waiting: 8 / 18 cycles remaining.
+
+Waiting: 7 / 18 cycles remaining.
+
+Waiting: 6 / 18 cycles remaining.
+
+Waiting: 5 / 18 cycles remaining.
+
+Waiting: 4 / 18 cycles remaining.
+
+Waiting: 3 / 18 cycles remaining.
+
+Waiting: 2 / 18 cycles remaining.
+
+Waiting: 1 / 18 cycles remaining.
+
+Waiting: 0 / 18 cycles remaining.
+
+
+RUN
+Calculating: 6 / 7 cycles remaining.
+
+Calculating: 5 / 7 cycles remaining.
+
+Calculating: 4 / 7 cycles remaining.
+
+Calculating: 3 / 7 cycles remaining.
+
+Calculating: 2 / 7 cycles remaining.
+
+Calculating: 1 / 7 cycles remaining.
+
+Calculating: 0 / 7 cycles remaining.
+
+
+WAIT
+Waiting: 22 / 23 cycles remaining.
+
+Waiting: 21 / 23 cycles remaining.
+
+Waiting: 20 / 23 cycles remaining.
+
+Waiting: 19 / 23 cycles remaining.
+
+Waiting: 18 / 23 cycles remaining.
+
+Waiting: 17 / 23 cycles remaining.
+
+Waiting: 16 / 23 cycles remaining.
+
+Waiting: 15 / 23 cycles remaining.
+
+Waiting: 14 / 23 cycles remaining.
+
+Waiting: 13 / 23 cycles remaining.
+
+Waiting: 12 / 23 cycles remaining.
+
+Waiting: 11 / 23 cycles remaining.
+
+Waiting: 10 / 23 cycles remaining.
+
+Waiting: 9 / 23 cycles remaining.
+
+Waiting: 8 / 23 cycles remaining.
+
+Waiting: 7 / 23 cycles remaining.
+
+Waiting: 6 / 23 cycles remaining.
+
+Waiting: 5 / 23 cycles remaining.
+
+Waiting: 4 / 23 cycles remaining.
+
+Waiting: 3 / 23 cycles remaining.
+
+Waiting: 2 / 23 cycles remaining.
+
+Waiting: 1 / 23 cycles remaining.
+
+Waiting: 0 / 23 cycles remaining.
+
+
