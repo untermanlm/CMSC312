@@ -1,15 +1,24 @@
-import sys
-from multiprocessing import Process
+from random import random
+from threading import Thread
 import Operations
 import itertools
-class P(Process):
+import time
+import Memory
+import random
+
+m1 = Memory.MainMemory()
+m2 = Memory.VirtualMemory()
+class P(Thread):
     id_iter = itertools.count()
     def __init__(self):
         super(P, self).__init__()
         self.id = next(self.id_iter)
         self._state = 'NEW'
+        print(f'Process {self.id}: {self._state}')
         self._operationsList = []
         self._scheduleType = 'FCFS'
+        self.stop = False
+        self.memoryreq = (2 * pow(2, random.randint(6,8))) / 1000 # MB
 
     @property
     def operationsList(self):
@@ -17,7 +26,13 @@ class P(Process):
     @operationsList.setter
     def operationsList(self, o):
         self._operationsList = o
-        self._state = 'READY'
+        try:
+            m1.useMemory(self.memoryreq, self)
+            m2.addPages(self)
+            self._state = 'READY'
+        except ValueError:
+            m1.addToQueue(self)
+        print(f'Process {self.id}: {self._state}')
 
     @property
     def state(self):
@@ -40,12 +55,20 @@ class P(Process):
         if (s not in schedulers):
             raise ValueError("Invalid scheduler")
         self._scheduleType = s
+    def wait(self):
+        time.sleep(1)
     def run(self):
         newID = str(self.id)
-        logName = 'processLog' + newID + '.txt'
-        sys.stdout = open(logName, 'w')
+        start = time.time()
         if (self._scheduleType == 'FCFS'):
             Operations.firstComeFirstServe(self)
         if (self._scheduleType == 'SJF'):
             Operations.shortestJobFirst(self)
-        sys.stdout.close()
+        end = time.time()
+
+        if (self.stop == False):
+            self.state = 'EXIT'
+            print(f'Process {self.id}: {self._state}')
+            print(f'Process {newID} finished after {round(end - start, 2)} seconds!')
+            m1.relieveMemory(self.memoryreq)
+
