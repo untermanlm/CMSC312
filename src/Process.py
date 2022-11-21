@@ -73,5 +73,5 @@ class P(Thread):
             print(f'Process {self.id}: {self._state}')
             print(f'Process {newID} finished after {round(end - start, 2)} seconds!')
             m1.relieveMemory(self.memoryreq)
-            print(m2.logicalMemory)
+            #print(m2.logicalMemory)
 
