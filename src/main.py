@@ -53,6 +53,7 @@ def callback(*args):
                 while(Process.m1.getMemoryLeft() < p.memoryreq):
                     p.wait()
                 Process.m1.useMemory(p.memoryreq, p)
+                Process.m2.toPhysical(p, Process.m1.frameTable)
                 p.start()
         for p in processes:
             p.join()
