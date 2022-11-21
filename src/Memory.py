@@ -70,24 +70,30 @@ class VirtualMemory:
                 offset = count # for now offset def aults to 0
                 #count += 1
                 process.pageTable.append((pageNum, offset))
-        print(process.pageTable)
+        #print(process.pageTable)
     def toPhysical(self, process, frameTable):
         lock = threading.Lock()
         with lock:
             for page in process.pageTable:
                 index = page[0] + page[1]
-                if (len(frameTable)-1 > index and frameTable[index] == None and frameTable.count(None) > 0):
+                if (len(frameTable) > index and frameTable[index] == None and frameTable.count(None) > 0):
                     frameTable[index] = f'Page {page[0]}'
-                elif (len(frameTable)-1 > index and frameTable.count(None) > 0):
+                elif (len(frameTable) > index and frameTable.count(None) > 0):
                     emptyIndex = frameTable.index(None)
                     pageIndex = process.pageTable.index(page[0])
                     frameTable[emptyIndex] =  f'Page {page[0]}'
                     process.pageTable[pageIndex] =  (page[0], emptyIndex-page[1])
                 else: # Basic page replacement algorithm
                     newIndex = 0 # Victim selection (first frame) - essentially a FIFO queue because processes arrive at same time in order
-                    pageIndex = process.pageTable.index(page[0])
+                    #print(process.pageTable)
+                    count = 0
+                    pageIndex = -1
+                    for element in page:
+                        if (element == page[0]):
+                            index = count
+                        count += 1
                     victim = frameTable[newIndex]
                     self.disk.append(victim)
                     frameTable[newIndex] = f'Page {page[0]}'
                     process.pageTable[pageIndex] = (page[0], page[1]*-1)
-            print (frameTable)
+                #print (frameTable)
