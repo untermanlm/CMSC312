@@ -19,6 +19,7 @@ class P(Thread):
         self._scheduleType = 'FCFS'
         self.stop = False
         self.memoryreq = (2 * pow(2, random.randint(6,8))) / 1000 # MB
+        self.pageTable = []
 
     @property
     def operationsList(self):
@@ -29,6 +30,7 @@ class P(Thread):
         try:
             m1.useMemory(self.memoryreq, self)
             m2.addPages(self)
+            m2.toPhysical(self, m1.frameTable)
             self._state = 'READY'
         except ValueError:
             m1.addToQueue(self)
@@ -71,4 +73,5 @@ class P(Thread):
             print(f'Process {self.id}: {self._state}')
             print(f'Process {newID} finished after {round(end - start, 2)} seconds!')
             m1.relieveMemory(self.memoryreq)
+            print(m2.logicalMemory)
 
