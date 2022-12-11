@@ -2,20 +2,22 @@ import threading
 from SeedGenerator import readProgramFile, createProcess
 import Process
 import tkinter as tk
+import itertools
 validOperations = ['CALCULATE', 'I/O', 'FORK']
-# def update():
-#     text = tk.Text(root)
-#     stats = []
-#     for p in processes:
-#         stat = 'ID: ' + str(p.id) + ' STATE: ' + p.state + '\n'
-#         stats.append(stat)
-#     for stat in stats:
-#         text.insert(tk.INSERT, stat)
-#         text.pack()
-#     root.after(1000, update)
+def update():
+    stats = ''
+    for p in processes:
+        if (p.runtime > 0):
+            stat = 'ID: ' + str(p.id) + ' STATE: ' + p.state + ' RUNTIME: ' + str(p.runtime) + ' seconds' + '\n'
+        else:
+            stat = 'ID: ' + str(p.id) + ' STATE: ' + p.state + '\n'
+        stats += stat
+    valuesLabel.configure(text=stats)
+    root.after(1000, update)
 def callback(*args):
     global operationsList
     global instructions
+    global multi
     msg = e.get()
     if ('LOAD' in msg):
         try:
@@ -58,11 +60,59 @@ def callback(*args):
                 p.start()
         for p in processes:
             p.join()
+    if (msg == 'MULTI'):
+        if (len(processes) % 2 == 0):
+            multi = True
+            cpu0 = []
+            cpu1 = []
+            for p in processes:
+                if (p.processor == 0):
+                    cpu0.append(p)
+                else:
+                    cpu1.append(p)
+            for (a,b) in itertools.zip_longest(cpu0, cpu1):
+                if (a.state == 'READY' and b.state == 'READY'):
+                    print(f'CPU 0 starting Process {a.id}')
+                    a.start()
+                    print(f'CPU 1 starting Process {b.id}')
+                    b.start()
+                else:
+                    if(Process.m1.getMemoryLeft() < a.memoryreq):
+                        while(Process.m1.getMemoryLeft() < a.memoryreq):
+                            a.wait()
+                        Process.m1.useMemory(a.memoryreq, a)
+                        Process.m2.addPages(a)
+                        Process.m2.toPhysical(a, Process.m1.frameTable)
+                        a.start()
+                    if (Process.m1.getMemoryLeft() < b.memoryreq):
+                        while(Process.m1.getMemoryLeft() < b.memoryreq):
+                            b.wait()
+                        Process.m1.useMemory(b.memoryreq, b)
+                        Process.m2.addPages(b)
+                        Process.m2.toPhysical(b, Process.m1.frameTable)
+                        b.start()
+            for (a,b) in itertools.zip_longest(cpu0, cpu1):
+                a.join()
+                b.join()
+        else:
+            print('MULTI LIMITATION: NUM PROCESS MUST BE EVEN')
+
     if (msg == 'STATS'):
         print('Printing stats!')
-        for p in processes:
-            print(f'ID: {p.id}, State: {p.state}, Schedule Type: {p.scheduleType}, Memory Requirement: {p.memoryreq} MB')
-        print("Individual log files will be stored as processLog(id).txt")
+        if (multi == False):
+            for p in processes:
+                if (p.runtime > 0):
+                    print(f'Thread ID: {p.id}, State: {p.state}, Runtime: {p.runtime} seconds, Schedule Type: {p.scheduleType}, Memory Requirement: {p.memoryreq} MB')
+                else:
+                    print(f'Thread ID: {p.id}, State: {p.state}, Schedule Type: {p.scheduleType}, Memory Requirement: {p.memoryreq} MB')
+        else:
+            for p in processes:
+                if (p.runtime > 0):
+                    print(f'CPU: {p.processor}, Thread ID: {p.id}, State: {p.state}, Runtime: {p.runtime} seconds, Schedule Type: {p.scheduleType}, Memory Requirement: {p.memoryreq} MB')
+                else:
+                    print(f'CPU: {p.processor}, Thread ID: {p.id}, State: {p.state}, Schedule Type: {p.scheduleType}, Memory Requirement: {p.memoryreq} MB')
+
+        #print("Individual log files will be stored as processLog(id).txt")
         # sys.stdout.close()
         # sys.stdout = stdoutOrigin
     if('SUSPEND' in msg):
@@ -85,11 +135,10 @@ def callback(*args):
 def main():
     print()
 if __name__ == "__main__":
-    # stdoutOrigin = sys.stdout
-    # sys.stdout = open('processLog.txt', 'w')
     instructions = []
     operationsList = []
     processes = []
+    multi = False
 
     root = tk.Tk()
     root.geometry('400x400')
@@ -104,6 +153,8 @@ if __name__ == "__main__":
     pLabel = tk.Label(text='Processes:')
     pLabel.pack()
 
+    valuesLabel = tk.Label(text='')
+    valuesLabel.pack()
 
-    #update()
+    update()
     root.mainloop()
