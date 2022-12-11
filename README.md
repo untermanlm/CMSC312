@@ -39,5 +39,5 @@ log file for each of the processes is generated detailing the individual operati
 
 Example string of commands: 
 * LOAD programfile1.txt -> SETPROC 2 -> START -> STATS
-* or LOAD programfile1.txt -> SETPROC 4 -> MULTI -> STATS
-* or LOAD programfile1.txt -> SETPROc 3 -> SUSPEND 50 -> STATS
+* LOAD programfile1.txt -> SETPROC 4 -> MULTI -> STATS
+* LOAD programfile1.txt -> SETPROc 3 -> SUSPEND 50 -> STATS
