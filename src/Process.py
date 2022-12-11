@@ -20,6 +20,8 @@ class P(Thread):
         self.stop = False
         self.memoryreq = (2 * pow(2, random.randint(6,8))) / 1000 # MB
         self.pageTable = []
+        self.processor = self.id % 2 # Hard affinity; if PID is even then choose Processor 0, else Processor 1
+        self.runtime = 0
 
     @property
     def operationsList(self):
@@ -67,7 +69,7 @@ class P(Thread):
         if (self._scheduleType == 'SJF'):
             Operations.shortestJobFirst(self)
         end = time.time()
-
+        self.runtime = round(end - start, 2)
         if (self.stop == False):
             self.state = 'EXIT'
             print(f'Process {self.id}: {self._state}')
