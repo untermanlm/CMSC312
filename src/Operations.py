@@ -1,8 +1,10 @@
 import random
 import time
 import threading
+import main
 
 def shortestJobFirst(process):
+    #main.valuesLabel.configure(text='ID: ' + str(process.id) + ' STATE: ' + process.state + '\n')
     operationList = process.operationsList
     sorted_1 = sorted(operationList, key=lambda x: x[1])
     for operation in sorted_1:
@@ -19,10 +21,12 @@ def shortestJobFirst(process):
             print(f'Process {process.id}: {process.state}')
             io(cycles)
         elif (operator == 'FORK'):
-            print()
+            process._state = 'RUN'
+            fork(cycles)
         else:
             print("Unknown operator")
 def firstComeFirstServe(process):
+    #main.valuesLabel.configure(text='ID: ' + str(process.id) + ' STATE: ' + process.state + '\n')
     operationList = process.operationsList
     for operation in operationList:
         if (process.stop):
@@ -38,7 +42,8 @@ def firstComeFirstServe(process):
             print(f'Process {process.id}: {process.state}')
             io(cycles)
         elif (operator == 'FORK'):
-            print()
+            process._state = 'RUN'
+            fork(cycles)
         else:
             print("Unknown operator")
 def calculate(numCycles):
@@ -63,5 +68,7 @@ def io(numCycles):
     #print()
 
 #to be developed
-def fork():
-    print()
+def fork(numCycles):
+    print('Creating child process!')
+    time.sleep(0.05 * numCycles)
+    print('Process completed, processes joined.')
