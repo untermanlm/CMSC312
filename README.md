@@ -37,6 +37,7 @@ SJF scheduler. `START` allows the Processes to run each of their operations (i.e
 `SUSPEND` allows you to run the processes for a limited number of cycles. `STATS` generates the statistics for each process and a
 log file for each of the processes is generated detailing the individual operations each process completed. `MULTI` simulates two CPUS running each of their processes concurrently.
 
-Example string of commands: LOAD programfile1.txt -> SETPROC 2 -> START -> STATS
-                            or LOAD programfile1.txt -> SETPROC 4 -> MULTI -> STATS
-                            or LOAD programfile1.txt -> SETPROc 3 -> SUSPEND 50 -> STATS
+Example string of commands: 
+* LOAD programfile1.txt -> SETPROC 2 -> START -> STATS
+* or LOAD programfile1.txt -> SETPROC 4 -> MULTI -> STATS
+* or LOAD programfile1.txt -> SETPROc 3 -> SUSPEND 50 -> STATS
