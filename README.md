@@ -2,11 +2,6 @@
 
 ![simulatorgui](https://github.com/untermanlm/CMSC312/blob/c772f09030885763042de4a50678158ad629b103/cmsc312guiex.jpg)
 
-## Full Information
-
-* Name: Luke Unterman
-* VID: V00949703
-
 ## GitHub Account Link
 
 https://github.com/untermanlm/CMSC312
